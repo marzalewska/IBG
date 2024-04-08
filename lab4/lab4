@@ -1,1 +1,10 @@
-ćwiczenia numer 4
+ćwiczenia numer 4:
+Inner join zwraca wiersze z obu tabel, które mają dopasowane wartości kluczy.Spark wykonuje inner join poprzez przetwarzanie obu tabel i łączenie tylko tych wierszy, które mają pasujące wartości kluczy.
+
+Left outer join (lub left join) zwraca wszystkie wiersze z lewej tabeli oraz pasujące wiersze z prawej tabeli.
+Right outer join (lub right join) zwraca wszystkie wiersze z prawej tabeli oraz pasujące wiersze z lewej tabeli.
+Spark wykonuje te operacje (right i left) poprzez połączenie wszystkich wierszy z jednej tabeli z pasującymi wierszami z drugiej tabeli. Jeśli nie ma pasujących wierszy, wypełnia brakujące wartości null.
+
+Left semi join zwraca wiersze z lewej tabeli, które mają pasujące wartości w prawej tabeli, ale nie zwraca żadnych kolumn z prawej tabeli. Spark wykonuje left semi join przez przetworzenie obu tabel i zwrócenie tylko tych wierszy z lewej tabeli, które mają pasujące wartości w prawej tabeli.
+
+Left anti join zwraca wiersze z lewej tabeli, które nie mają pasujących wartości w prawej tabeli. Spark wykonuje left anti join poprzez przetworzenie obu tabel i zwrócenie tylko tych wierszy z lewej tabeli, które nie mają dopasowanych wartości w prawej tabeli.
