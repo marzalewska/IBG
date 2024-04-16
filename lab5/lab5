@@ -1,1 +1,18 @@
-lab 5
+1.	Azure Data Lake Storage:
+o	(ADLS) to skalowalna i bezpieczna usługa przechowywania danych w chmurze, zaprojektowana do przechowywania ogromnych ilości danych w różnych formatach, w tym danych strukturalnych i niestrukturalnych. Jest idealny do przechowywania danych telemetrycznych, danych logów, danych z czujników itp.
+2.	Azure Data Factory:
+o	(ADF) to usługa do zarządzania danymi w chmurze, która umożliwia łatwe tworzenie, harmonogramowanie i monitorowanie potoków danych. ADF umożliwia przetwarzanie i transformację danych z różnych źródeł, w tym z baz danych lokalnych, chmur publicznych i hybrydowych.
+3.	Azure Mobile Apps:
+o	usługa, która umożliwia szybkie tworzenie skalowalnych i bezpiecznych aplikacji mobilnych dla różnych platform, w tym iOS, Android i Windows. Umożliwia łatwą integrację z usługami chmurowymi, uwierzytelnianie użytkowników, zarządzanie danymi offline i wiele więcej.
+4.	Azure Blob Storage:
+o	usługa przechowywania obiektów w chmurze, która umożliwia przechowywanie ogromnych ilości danych, takich jak pliki multimedialne, dokumenty, kopie zapasowe, maszyny wirtualne itp. Jest idealna do przechowywania danych niestrukturalnych, które wymagają elastycznego skalowania.
+5.	Azure Logic Apps:
+o	usługa do tworzenia automatycznych procesów biznesowych opartych na zdarzeniach w chmurze. Pozwala na łatwe tworzenie i konfigurowanie logiki przepływu pracy, która reaguje na różne zdarzenia w różnych usługach chmurowych i lokalnych.
+6.	Azure Monitor:
+o	usługa monitorowania, diagnostyki i analizy wydajności aplikacji i zasobów w chmurze. Zapewnia zaawansowane narzędzia do monitorowania zdrowia aplikacji, wizualizacji danych telemetrycznych, alarmów i powiadomień, a także integracji z innymi narzędziami monitorującymi.
+7.	Azure Cognitive Services:
+o	to zestaw usług opartych na sztucznej inteligencji, które umożliwiają dodawanie zaawansowanych funkcji AI do aplikacji bez potrzeby pisania własnego kodu. Obejmuje usługi do rozpoznawania obrazów, rozpoznawania mowy, analizy tekstu, tworzenia inteligentnych botów i wiele więcej.
+8.	Azure Machine Learning:
+o	usługa do tworzenia, trenowania i wdrażania modeli uczenia maszynowego w chmurze. Zapewnia narzędzia do eksploracji danych, budowania modeli, walidacji i wdrażania ich w aplikacjach produkcyjnych. Idealna do tworzenia zaawansowanych analiz predykcyjnych i rozwiązań AI.
+
+
