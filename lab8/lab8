@@ -1,0 +1,16 @@
+ZORDER jest techniką partycjonowania danych w Apache Spark, która jest wykorzystywana w połączeniu z formatem plików parquet. Ta technika polega na dodaniu dodatkowej informacji o sortowaniu do danych przed zapisaniem ich do pliku parquet. Informacja ta umożliwia lepszą lokalizację danych podczas operacji odczytu, co może znacznie poprawić wydajność zapytań, szczególnie w przypadku zapytań, które często korzystają z określonego porządku kolumn.
+Działanie ZORDER polega na podziale danych na bloki i sortowaniu ich na podstawie jednej lub więcej kolumn. Następnie bloki te są zapisywane do pliku parquet w taki sposób, że dane w każdym bloku są posortowane względem wybranej kolumny lub kolumn. W efekcie, gdy Spark wykonuje zapytanie, które korzysta z tej samej kolumny lub kolumn, które zostały użyte do sortowania, może on skorzystać z tej informacji, aby przyspieszyć przetwarzanie poprzez pominięcie niektórych bloków, które nie zawierają odpowiednich danych.
+Dzięki ZORDER możemy osiągnąć efekt podobny do techniki CLUSTER BY w bazach danych relacyjnych, co może znacznie poprawić wydajność zapytań, szczególnie w przypadku, gdy mamy dużo danych i chcemy przyspieszyć zapytania, które korzystają z określonego porządku kolumn. Jednak warto pamiętać, że ZORDER może spowodować większe zużycie miejsca na dysku, ponieważ wymaga sortowania danych przed zapisem, co może zwiększyć rozmiar plików parquet.
+
+
+VACUUM jest operacją utrzymania w Apache Spark, która służy do optymalizacji i zarządzania przestrzenią na dysku po wykonaniu operacji DELETE lub UPDATE na tabelach Delta Lake.
+Kiedy wykonujemy operacje DELETE lub UPDATE na tabeli Delta Lake, rekordy nie są natychmiast usuwane z plików. Zamiast tego, oznacza się je jako do usunięcia i oznaczane są w specjalny sposób, aby zachować spójność danych. Jednakże te rekordy do usunięcia zajmują miejsce na dysku, co może powodować nadmierną alokację miejsca w przypadku wielu takich operacji.
+VACUUM jest operacją, która usuwa te zaznaczone rekordy z plików, optymalizując w ten sposób miejsce na dysku. Podczas działania VACUUM, Spark przegląda pliki Delta Lake, usuwa zaznaczone rekordy i kompresuje pliki, aby zmniejszyć ich rozmiar.
+Ogólny proces działania VACUUM wygląda następująco:
+
+    Spark przegląda wszystkie pliki Delta Lake w tabeli.
+    Usuwa zaznaczone rekordy z tych plików.
+    Kompresuje pliki, aby zmniejszyć ich rozmiar i zredukować nadmierną alokację miejsca na dysku.
+    Aktualizuje metadane tabeli Delta Lake, aby odzwierciedlić wykonane zmiany.
+
+Operacja VACUUM jest szczególnie przydatna w przypadku tabel Delta Lake, które są często modyfikowane za pomocą operacji DELETE lub UPDATE, ponieważ pozwala na optymalizację miejsca na dysku i utrzymanie spójności danych. Jednak warto pamiętać, że operacja VACUUM może być czasochłonna i powinna być wykonywana wtedy, gdy nie ma dużego obciążenia systemu, aby uniknąć zakłóceń w działaniu aplikacji.
